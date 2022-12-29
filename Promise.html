@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // To Create new object of promise we have to use New Keyword. Whenever we create a new promise  then we have to execute a function which is called as executor. and in this function we have to pass two arguement which is called as resolve and reject
+        const obj1 = new Promise((resolve,reject) => {
+            setTimeout(() => {
+                let roll_no = [1,2,3,4,5]
+                // resolve(roll_no)
+                reject("Sorry")
+            }, 2000);
+
+            // Promise have two method 1) .then() and .catch()
+
+        }) 
+
+        obj1.then((roll) => { 
+            console.log(roll)
+            // If promise is resolve then then method will be executed. If promise is rejected then  catch method will be executed.
+
+            // if promise is resolved then value of roll_no will get store inside roll
+        })
+        obj1.catch((roll1) => {
+            console.log(roll1)
+            // If The Promise is Rejected then the varible roll! will store the value Sorry
+        })
+
+    </script>
+</body>
+</html>

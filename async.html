@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //We have created async function. and created two promise. DelhiW and Banglore
+        async function ankit() {
+        let delhiW = new Promise ( (resolve , reject) => {
+            setTimeout(() => {
+                resolve("27 Degree")
+                reject("OOPs") 
+
+                // If the promise is fetched then resolve will executed else reject
+            }, 5000);
+        } )
+
+        let Banglore = new Promise ((resolve , reject) => {
+            setTimeout(() => {
+                resolve("21 Degree")
+            }, 1000);
+        })
+        console.log(` fetching Delhi   `)
+        let delhiWW = await delhiW
+        //await wait jab tak me execute nhi houga next execution nhi hoga
+        console.log("fetched" , delhiW)
+        console.log("fetching Banglore" )
+        // not await will be fetched
+        let BangloreW = await Banglore
+        console.log("fetched" , BangloreW)
+        return [Banglore , delhiW]
+    }
+    let a = ankit()
+    a.then((value) => {
+        console.log(value)
+    })
+    a.catch((values) => {
+        console.log(values)
+    })
+
+
+
+
+    </script>
+</body>
+</html>
